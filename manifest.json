@@ -1,0 +1,20 @@
+{
+  "name": "admin-example",
+  "vendor": "vtex",
+  "version": "0.0.0",
+  "title": "Example Admin App",
+  "description": "",
+  "mustUpdateAt": "2022-08-28",
+  "scripts": {
+    "postreleasy": "vtex publish"
+  },
+  "dependencies": {
+    "vtex.styleguide": "9.x",
+    "vtex.admin": "2.x"
+  },
+  "builders": {
+    "react": "3.x",
+    "pages": "1.x",
+    "messages": "1.x"
+  }
+}

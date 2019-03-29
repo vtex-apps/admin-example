@@ -1,0 +1,8 @@
+{
+  "admin.example": {
+    "component": "AdminExample"
+  },
+  "admin.example-detail": {
+    "component": "AdminExampleDetail"
+  }
+}

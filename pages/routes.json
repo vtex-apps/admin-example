@@ -1,0 +1,8 @@
+{
+  "admin.example": {
+    "path": "/admin/app/example"
+  },
+  "admin.example-detail": {
+    "path": "/admin/app/example/:id"
+  }
+}
