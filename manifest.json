@@ -9,7 +9,9 @@
     "postreleasy": "vtex publish"
   },
   "dependencies": {
-    "vtex.styleguide": "9.x",
+    "vtex.styleguide": "9.x"
+  },
+  "peerDependencies": {
     "vtex.admin": "2.x"
   },
   "builders": {
