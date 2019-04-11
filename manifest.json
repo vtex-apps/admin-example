@@ -16,7 +16,7 @@
   },
   "builders": {
     "react": "3.x",
-    "pages": "1.x",
+    "admin": "0.x",
     "messages": "1.x"
   }
 }
