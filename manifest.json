@@ -1,7 +1,7 @@
 {
   "name": "admin-example",
   "vendor": "vtex",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "title": "Example Admin App",
   "description": "",
   "mustUpdateAt": "2022-08-28",
@@ -11,12 +11,9 @@
   "dependencies": {
     "vtex.styleguide": "9.x"
   },
-  "peerDependencies": {
-    "vtex.admin": "2.x"
-  },
   "builders": {
     "react": "3.x",
-    "pages": "1.x",
+    "admin": "0.x",
     "messages": "1.x"
   }
 }
