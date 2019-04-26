@@ -1,0 +1,12 @@
+{
+  "icon": "inventory-shipping-ic",
+  "id": "9",
+  "subItems": [
+    {
+      "labelId": "appframe.navigation.example",
+      "path": "/admin/example"
+    }
+  ],
+  "titleId": "appframe.navigation.inventoryAndShipping",
+  "group": "delivery"
+}
