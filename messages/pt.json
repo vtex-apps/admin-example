@@ -1,4 +1,5 @@
 {
-  "admin-example.hello-world": "Olá, mundo!",
+  "admin-example.navigation.label": "Admin de exemplo",
+  "admin-example.hello-world": "Admin Exemplo",
   "appframe.navigation.example": "Admin Exemplo"
 }

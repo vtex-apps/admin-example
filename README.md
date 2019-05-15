@@ -1,10 +1,10 @@
-# Admin Example
+# [ WORK IN PROGRESS ] Admin Example
 
 An example admin app that adds a menu button to the admin sidebar.
 
 # PREVIEW NOTICE :construction:
 
-We're working on the **admin builder**, which will allow you to define a single `admin/admin.json` file with everything you need to create an admin (routes, components and navigation). This is a temporary example!
+We're working on the **admin builder**, which will allow you to define two files: `admin/routes.json` file with everything you need to create an admin interface (routes paths and components), and `admin/navigation.json` which alows your admin app to insert itself in the sidebar navigation. This is a temporary example!
 
 ### How to develop admins
 
