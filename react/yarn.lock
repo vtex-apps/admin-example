@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@types/faker@^4.1.5":
+  version "4.1.5"
+  resolved "https://registry.yarnpkg.com/@types/faker/-/faker-4.1.5.tgz#8f620f9c9a67150aa0a32b4e8a407da43fca61d4"
+  integrity sha512-YSDqoBEWYGdNk53xSkkb6REaUaVSlIjxIAGjj/nbLzlZOit7kUU+nA2zC2qQkIVO4MQ+3zl4Sz7aw+kbpHHHUQ==
+
 "@types/node@^11.12.1":
   version "11.12.1"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-11.12.1.tgz#d90123f6c61fdf2f7cddd286ddae891586dd3488"
@@ -197,6 +202,11 @@ esutils@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/esutils/-/esutils-2.0.2.tgz#0abf4f1caa5bcb1f7a9d8acc6dea4faaa04bac9b"
   integrity sha1-Cr9PHKpbyx96nYrMbepPqqBLrJs=
+
+faker@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/faker/-/faker-4.1.0.tgz#1e45bbbecc6774b3c195fad2835109c6d748cc3f"
+  integrity sha1-HkW7vsxndLPBlfrSg1EJxtdIzD8=
 
 fast-json-stable-stringify@^2.0.0:
   version "2.0.0"
@@ -502,6 +512,14 @@ typescript@^3.4.1:
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.4.1.tgz#b6691be11a881ffa9a05765a205cb7383f3b63c6"
   integrity sha512-3NSMb2VzDQm8oBTLH6Nj55VVtUEpe/rgkIzMir0qVoLyjDZlnMBva0U6vDiV3IH+sl/Yu6oP5QwsAQtHPmDd2Q==
+
+"vtex.render-runtime@http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.render-runtime@8.28.0/public/_types/react":
+  version "8.28.0"
+  resolved "http://vtex.vteximg.com.br/_v/public/typings/v1/vtex.render-runtime@8.28.0/public/_types/react#2210c10cca4a67dba9d030383b750ec4a4898a5e"
+
+"vtex.styleguide@https://yeaboi--pricingqa.myvtexdev.com/_v/private/typings/linked/v1/vtex.styleguide@9.666.0+build1557507464/public/_types/react":
+  version "0.0.0"
+  resolved "https://yeaboi--pricingqa.myvtexdev.com/_v/private/typings/linked/v1/vtex.styleguide@9.666.0+build1557507464/public/_types/react#fa7a0347e046eab3dd768998fc9252b2c0dd5aef"
 
 wrappy@1:
   version "1.0.2"
