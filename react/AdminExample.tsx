@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { FormattedMessage } from "react-intl";
 import { Layout, PageBlock, PageHeader } from "vtex.styleguide";
+import UsersTable from "./UsersTable";
 
 import "./styles.global.css";
 
@@ -14,8 +15,8 @@ class AdminExample extends Component {
           />
         }
       >
-        <PageBlock>
-          <FormattedMessage id="appframe.navigation.example" />
+        <PageBlock variation="full">
+          <UsersTable />
         </PageBlock>
       </Layout>
     );

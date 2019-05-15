@@ -3,7 +3,10 @@
     "allowJs": false,
     "allowSyntheticDefaultImports": true,
     "jsx": "react",
-    "lib": ["es2017", "dom"],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
     "module": "es6",
     "moduleResolution": "node",
     "sourceMap": true,
