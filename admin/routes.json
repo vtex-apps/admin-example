@@ -2,5 +2,9 @@
   "admin.app.example": {
     "component": "AdminExample",
     "path": "/admin/app/example"
+  },
+  "admin.app.example-detail": {
+    "component": "AdminExampleDetail",
+    "path": "/admin/app/example/:id"
   }
 }
