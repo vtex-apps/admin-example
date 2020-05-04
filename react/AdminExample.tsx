@@ -1,26 +1,20 @@
-import React, { Component } from "react";
-import { FormattedMessage } from "react-intl";
-import { Layout, PageBlock, PageHeader } from "vtex.styleguide";
-import UsersTable from "./UsersTable";
+import React, { FC } from 'react'
+import { useQuery } from 'react-apollo'
+import helloworld from './graphql/helloworld.gql'
+import { Layout, PageBlock } from "vtex.styleguide"
 
-import "./styles.global.css";
+const AdminExample: FC = () => {
+  const { data } = useQuery(helloworld)
 
-class AdminExample extends Component {
-  public render() {
-    return (
-      <Layout
-        pageHeader={
-          <PageHeader
-            title={<FormattedMessage id="admin-example.hello-world" />}
-          />
-        }
-      >
-        <PageBlock variation="full">
-          <UsersTable />
-        </PageBlock>
-      </Layout>
-    );
-  }
+  if (data)
+    return <Layout>
+      <PageBlock variation="full">
+        <h1>This is a backend message:</h1>
+        <h1>{data.helloworld}</h1>
+      </PageBlock>
+    </Layout>
+  else
+    return null
 }
 
-export default AdminExample;
+export default AdminExample

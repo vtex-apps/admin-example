@@ -1,26 +1,13 @@
 {
+  "extends": "@vtex/tsconfig",
   "compilerOptions": {
-    "allowJs": false,
-    "allowSyntheticDefaultImports": true,
     "jsx": "react",
-    "lib": [
-      "es2017",
-      "dom"
-    ],
-    "module": "es6",
+    "noEmitOnError": false,
+    "typeRoots": ["node_modules/@types"],
+    "types": ["node", "jest", "graphql"],
+    "module": "esnext",
     "moduleResolution": "node",
-    "sourceMap": true,
-    "target": "es2017",
-    "skipLibCheck": true,
-    "strict": true
+    "target": "es2017"
   },
-  "typeAcquisition": {
-    "enable": false
-  },
-  "include": [
-    "./**/*"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["./typings/*.d.ts", "./**/*.tsx", "./**/*.ts"]
 }
