@@ -2,18 +2,22 @@
   "name": "vtex.admin-example",
   "version": "0.0.1",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vtex-test-tools test"
   },
   "devDependencies": {
-    "@types/node": "^11.12.1",
-    "@types/react": "^16.8.10",
-    "@types/react-intl": "^2.3.17",
-    "apollo-client": "^2.4.7",
-    "graphql": "^14.0.2",
+    "@apollo/react-testing": "^3.1.4",
+    "@types/jest": "^25.2.1",
+    "@types/node": "^13.13.4",
+    "@types/react": "^16.9.34",
+    "@types/react-intl": "^3.0.0",
+    "@vtex/test-tools": "^3.1.0",
+    "apollo-cache-inmemory": "^1.6.5",
+    "apollo-client": "^2.6.8",
+    "graphql": "^15.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-intl": "^2.7.2",
+    "react-intl": "^4.5.2",
     "typescript": "^3.4.1"
   },
   "dependencies": {
