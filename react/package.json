@@ -1,6 +1,6 @@
 {
   "name": "vtex.admin-example",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,7 +14,6 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-intl": "^2.7.2",
-    "tslint": "^5.14.0",
     "typescript": "^3.4.1"
   },
   "dependencies": {
