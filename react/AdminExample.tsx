@@ -1,26 +1,25 @@
-import React, { Component } from "react";
-import { FormattedMessage } from "react-intl";
-import { Layout, PageBlock, PageHeader } from "vtex.styleguide";
-import UsersTable from "./UsersTable";
+import React, { FC } from 'react'
+import { FormattedMessage } from 'react-intl'
+import { Layout, PageBlock, PageHeader } from 'vtex.styleguide'
 
-import "./styles.global.css";
+import UsersTable from './UsersTable'
 
-class AdminExample extends Component {
-  public render() {
-    return (
-      <Layout
-        pageHeader={
-          <PageHeader
-            title={<FormattedMessage id="admin-example.hello-world" />}
-          />
-        }
-      >
-        <PageBlock variation="full">
-          <UsersTable />
-        </PageBlock>
-      </Layout>
-    );
-  }
+import './styles.global.css'
+
+const AdminExample: FC = () => {
+  return (
+    <Layout
+      pageHeader={
+        <PageHeader
+          title={<FormattedMessage id="admin-example.hello-world" />}
+        />
+      }
+    >
+      <PageBlock variation="full">
+        <UsersTable />
+      </PageBlock>
+    </Layout>
+  )
 }
 
-export default AdminExample;
+export default AdminExample

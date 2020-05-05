@@ -1,23 +1,21 @@
-import React, { Component } from 'react';
-import { Table, IconArrowUp, IconArrowDown, IconShoppingCart, Input } from "vtex.styleguide";
-import faker from 'faker';
+import React, { Component, Fragment } from 'react'
+import {
+  Table,
+  IconArrowUp,
+  IconArrowDown,
+  IconShoppingCart,
+  Input,
+} from 'vtex.styleguide'
+import faker from 'faker'
 
 const EXAMPLE_LENGTH = 100
-const MOCKED_DATA = [...Array(EXAMPLE_LENGTH)].map(() => (
-  {
-    avatar: faker.internet.avatar(),
-    name: faker.name.findName(),
-    streetAddress: faker.address.streetAddress(),
-    cityStateZipAddress: `${
-      faker.address.city()
-    }, ${
-      faker.address.stateAbbr()
-    } ${
-      faker.address.zipCode()
-    }`,
-    email: faker.internet.email().toLowerCase(),
-  })
-)
+const MOCKED_DATA = [...Array(EXAMPLE_LENGTH)].map(() => ({
+  avatar: faker.internet.avatar(),
+  name: faker.name.findName(),
+  streetAddress: faker.address.streetAddress(),
+  cityStateZipAddress: `${faker.address.city()}, ${faker.address.stateAbbr()} ${faker.address.zipCode()}`,
+  email: faker.internet.email().toLowerCase(),
+}))
 
 export default class UsersTable extends Component {
   constructor(props: any) {
@@ -35,7 +33,7 @@ export default class UsersTable extends Component {
     let avatarScale = 'scale(1,1)'
     let fontSize = 'f5'
     let avatarColumnWidth = 100
-    switch(tableDensity) {
+    switch (tableDensity) {
       case 'low': {
         avatarScale = 'scale(0.9, 0.75)'
         fontSize = 'f5'
@@ -68,19 +66,19 @@ export default class UsersTable extends Component {
           width: avatarColumnWidth,
           cellRenderer: ({ cellData }: any) => {
             return (
-              <div className="pa4 tc" style={{
-                transform: avatarScale
-              }}>
-                <img
-                  src={cellData}
-                  className="br-100 h3 w3 dib"
-                  alt="avatar" />
+              <div
+                className="pa4 tc"
+                style={{
+                  transform: avatarScale,
+                }}
+              >
+                <img src={cellData} className="br-100 h3 w3 dib" alt="avatar" />
               </div>
             )
           },
           headerRenderer: ({ title }: any) => (
             <span className="w-100 tc">{title}</span>
-          )
+          ),
         },
         name: {
           title: 'Name',
@@ -88,34 +86,22 @@ export default class UsersTable extends Component {
         streetAddress: {
           title: 'Street Address',
           cellRenderer: ({ cellData }: any) => {
-            return (
-              <span className="ws-normal">
-                {cellData}
-              </span>
-            )
-          }
+            return <span className="ws-normal">{cellData}</span>
+          },
         },
         cityStateZipAddress: {
           title: 'City, State Zip',
           cellRenderer: ({ cellData }: any) => {
-            return (
-              <span className={`ws-normal ${fontSize}`}>
-                {cellData}
-              </span>
-            )
-          }
+            return <span className={`ws-normal ${fontSize}`}>{cellData}</span>
+          },
         },
         email: {
           title: 'Email',
           cellRenderer: ({ cellData }: any) => {
-            return (
-              <span className={`ws-normal ${fontSize}`}>
-                {cellData}
-              </span>
-            )
-          }
-        }
-      }
+            return <span className={`ws-normal ${fontSize}`}>{cellData}</span>
+          },
+        },
+      },
     }
   }
 
@@ -169,7 +155,12 @@ export default class UsersTable extends Component {
   }
 
   public render() {
-    const { items, searchValue, filterStatements, tableDensity }: any = this.state
+    const {
+      items,
+      searchValue,
+      filterStatements,
+      tableDensity,
+    }: any = this.state
     return (
       <div>
         <Table
@@ -184,12 +175,14 @@ export default class UsersTable extends Component {
               lowOptionLabel: 'Low',
               mediumOptionLabel: 'Medium',
               highOptionLabel: 'High',
-              handleCallback: (tableDensity: string) => this.setState({ tableDensity })
+              handleCallback: (density: string) =>
+                this.setState({ tableDensity: density }),
             },
             inputSearch: {
               value: searchValue,
               placeholder: 'Search stuff...',
-              onChange: (searchValue: string) => this.setState({ searchValue }),
+              onChange: (value: string) =>
+                this.setState({ searchValue: value }),
               onClear: () => this.setState({ searchValue: null }),
               onSubmit: () => {},
             },
@@ -231,8 +224,8 @@ export default class UsersTable extends Component {
           filters={{
             alwaysVisibleFilters: ['name', 'email'],
             statements: filterStatements,
-            onChangeStatements: (filterStatements: string) =>
-              this.setState({ filterStatements }),
+            onChangeStatements: (newStatements: string) =>
+              this.setState({ filterStatements: newStatements }),
             clearAllFiltersButtonLabel: 'Clear Filters',
             collapseLeft: true,
             options: {
@@ -266,7 +259,7 @@ export default class UsersTable extends Component {
               iconBackgroundColor: '#eafce3',
               icon: <IconArrowUp color="#79B03A" size={14} />,
             },
-  
+
             {
               label: 'Cash out',
               value: '- R$ 13.485,26',
@@ -277,11 +270,11 @@ export default class UsersTable extends Component {
             texts: {
               secondaryActionsLabel: 'Actions',
               rowsSelected: (qty: any) => (
-                <React.Fragment>Selected rows: {qty}</React.Fragment>
+                <Fragment>Selected rows: {qty}</Fragment>
               ),
               selectAll: 'Select all',
               allRowsSelected: (qty: any) => (
-                <React.Fragment>All rows selected: {qty}</React.Fragment>
+                <Fragment>All rows selected: {qty}</Fragment>
               ),
             },
             totalItems: 100,
@@ -292,11 +285,11 @@ export default class UsersTable extends Component {
             others: [
               {
                 label: 'Reset avatar',
-                handleCallback: (params: any) => console.log(params),
+                handleCallback: (params: any) => console.warn(params),
               },
               {
                 label: 'Delete',
-                handleCallback: (params: any) => console.log(params),
+                handleCallback: (params: any) => console.warn(params),
               },
             ],
           }}
