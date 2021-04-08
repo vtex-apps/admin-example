@@ -36,7 +36,6 @@ docs/_book/
 npm-debug.log
 .build/
 lib
-.eslintrc
 *.orig
 package-lock.json
 yarn-error.log
