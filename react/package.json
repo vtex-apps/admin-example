@@ -5,19 +5,20 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "@types/node": "^11.12.1",
-    "@types/react": "^16.8.10",
-    "@types/react-intl": "^2.3.17",
-    "apollo-client": "^2.4.7",
-    "graphql": "^14.0.2",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-intl": "^2.7.2",
-    "typescript": "^3.4.1"
+    "@types/node": "^15.6.1",
+    "@types/react": "^17.0.8",
+    "@types/react-headroom": "^2.2.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-intl": "^5.8.1",
+    "typescript": "3.9.7",
+    "vtex.admin-example": "https://marcelo--teamadmin.myvtex.com/_v/private/typings/linked/v1/vtex.admin-example@0.0.2+build1622216459/public/@types/vtex.admin-example",
+    "vtex.render-runtime": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.128.4/public/@types/vtex.render-runtime",
+    "vtex.styleguide": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.142.0/public/@types/vtex.styleguide"
   },
   "dependencies": {
-    "@types/faker": "^4.1.5",
-    "faker": "^4.1.0"
+    "@vtex/admin-ui": "^0.97.0",
+    "react-headroom": "^3.1.1",
+    "short-uuid": "^4.2.0"
   }
 }

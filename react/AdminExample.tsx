@@ -1,24 +1,36 @@
-import React, { FC } from 'react'
-import { FormattedMessage } from 'react-intl'
-import { Layout, PageBlock, PageHeader } from 'vtex.styleguide'
+import React from 'react'
+import { Button, Flex, ThemeProvider, toast } from '@vtex/admin-ui'
+import { useIntl } from 'react-intl'
 
-import UsersTable from './UsersTable'
+import { Table } from './components/Table'
+import { system } from './system'
+import { PageHeader } from './components/PageHeader'
+import { messages } from './i18n/messages'
 
-import './styles.global.css'
+function AdminExample() {
+  const { formatMessage } = useIntl()
 
-const AdminExample: FC = () => {
   return (
-    <Layout
-      pageHeader={
-        <PageHeader
-          title={<FormattedMessage id="admin-example.hello-world" />}
-        />
-      }
-    >
-      <PageBlock variation="full">
-        <UsersTable />
-      </PageBlock>
-    </Layout>
+    <ThemeProvider system={system}>
+      <PageHeader>
+        <PageHeader.Title label={formatMessage(messages.title)} />
+        <PageHeader.ActionItems>
+          <Button
+            onClick={() => {
+              toast.dispatch({
+                message: formatMessage(messages.someAction),
+                type: 'success',
+              })
+            }}
+          >
+            {formatMessage(messages.someAction)}
+          </Button>
+        </PageHeader.ActionItems>
+      </PageHeader>
+      <Flex csx={{ padding: 4 }} grow={1}>
+        <Table />
+      </Flex>
+    </ThemeProvider>
   )
 }
 

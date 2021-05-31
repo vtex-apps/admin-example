@@ -1,18 +1,25 @@
-{
-  "section": "orders",
-  "titleId": "admin-example.navigation.label-group",
-  "subSection": "example",
-  "searchKeyWordsHelpers": "admin-example.navigation.search.kws",
-  "subSectionItems": [
-    {
-      "labelId": "admin-example.navigation.label-details",
-      "path": "/admin/example",
-      "searchKeyWordsHelpers": "admin-example.navigation.details.search.kws"
-    },
-    {
-      "labelId": "admin-example.navigation.label-table",
-      "path": "/admin/example",
-      "searchKeyWordsHelpers": "admin-example.navigation.table.search.kws"
-    }
-  ]
-}
+[
+  {
+    "section": "orders",
+    "titleId": "admin-example.navigation.group-label",
+    "subSection": "example",
+    "subSectionItems": [
+      {
+        "labelId": "admin-example.navigation.app-label",
+        "path": "/admin/example"
+      }
+    ]
+  },
+  {
+    "section": "orders",
+    "titleId": "admin-example.navigation.group-label",
+    "subSection": "example",
+    "adminVersion": 4,
+    "subSectionItems": [
+      {
+        "labelId": "admin-example.navigation.app-label",
+        "path": "/admin/example"
+      }
+    ]
+  }
+]

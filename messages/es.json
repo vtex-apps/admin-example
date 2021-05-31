@@ -1,9 +1,7 @@
 {
-  "admin-example.navigation.label-group": "Admins de ejemplo",
-  "admin-example.navigation.label-details": "Ejemplo de detalhes",
-  "admin-example.navigation.label-table": "Ejemplo de tabela",
-  "admin-example.navigation.search.kws": "teste, mock, fake",
-  "admin-example.navigation.details.search.kws": "detalhe, mock, test, oi",
-  "admin-example.navigation.table.search.kws": "tabela, mock, test, tchau",
-  "admin-example.hello-world": "Admin de ejemplo"
+  "admin-example.navigation.group-label": "Admin Apps de Ejemplo",
+  "admin-example.navigation.app-label": "Admin App de Ejemplo",
+  "admin-example.table-label": "Una tabla",
+  "admin-example.title": "Título de la Admin App de Ejemplo",
+  "admin-example.some-action": "Algo de acción"
 }
