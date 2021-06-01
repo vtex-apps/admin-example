@@ -30,9 +30,13 @@ Note how each builder is defined on the `manifest.json`:
 
 ### The `admin` folder
 
-Under this folder you will find the `navigation.json` and the `routes.json` files. These files are used to define both where the app should live on the Admin Sidebar and what route should render which component. Each of them follow certain rules. See below.
+Under this folder you will find the `navigation.json` and the `routes.json` files. These files are used to define both where the app should be placed on the Admin Sidebar and what route should render which component. Each of them follow certain rules. See below.
 
 #### `navigation.json`
+
+This file defines where the app should be placed on the Admin Sidebar.
+
+[See the types block to see a Typescript version of this](#types)
 
 | Property          | Required | Type                    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | Defaults to |
 | ----------------- | -------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
@@ -46,7 +50,20 @@ Under this folder you will find the `navigation.json` and the `routes.json` file
 | `external`        | No       | `boolean`               | Whether or not your app should open in a new window, or outside of the Admin                                                                                                                                                                                                                                                                                                                                                                                                                | `false`     |
 | `id`              | No       | `string`                | In case you're developing a new version of an existing app that when installed, should replace the existing one, set this property on both, the existing and the new one. This ID is used to remove duplicates. This is an edge case. If you need to set this property, use a short uuid generator such as [short-unique-id](https://shortunique.id/) as a prefix for the ID of your application to minize the chances of duplicatess.                                                      | -           |
 
+##### Types
+
 ```ts
+interface NavigationSettingsBlock {
+  section: SectionV4 | SectionV3
+  titleId: string
+  path?: string
+  subSection?: string
+  subSectionItems?: SubSection[]
+  LMProductId?: string
+  id?: string
+  external?: boolean
+}
+
 type SectionV4 =
   | 'main'
   | 'orders'
@@ -74,11 +91,74 @@ interface SubSection {
   path: string
   labelId: string
   id?: string
+  external?: string
 }
 ```
 
 #### `routes.json`
 
+This file defines what component should be rendered on a particular route.
+
+| Property  | Required | Type     | Description                                                                                                                                                                                                                                                                                            | Defaults to |
+| --------- | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------- |
+| component | Yes      | `string` | The name of the component that you're exporting from the root of the `react` folder. For example, in the example above, we should have a component named `SomeComponent.tsx` being default exported from `react/SomeComponent.tsx`. [See the react folder section for more details](#the-react-folder) | -           |
+| path      | Yes      | `string` | The route which the component defined on the field above should be rendered. Note that it's a must for it to start with the `/admin/app/` prefix. If your route contains variables, you can declare them with `:variableName`. For example: `/admin/app/delivery/:productCategory/:productId`          | -           |
+
+It follows the following format:
+
+```json
+{
+  "component.route.key": {
+    "component": "SomeComponent",
+    "path": "/admin/app/some/route/"
+  }
+}
+```
+
+Different from the `navigation.json`, where your configuration blocks live inside an array, you should define the routes inside a object. You're free to decide what key you want to give for your route configuration. In the example above, we used `component.route.key`.
+
+On the `component` field, you should set the name of the component that is default exported [from the react folder](#the-react-folder)
+
 #### The `messages` folder
 
+This folder holds all the translations for your app. One json file per language like so:
+
+`en.json`
+
+```json
+{
+  "admin/orders-main-title": "Orders"
+}
+```
+
+`pt.json`
+
+```json
+{
+  "admin/orders-main-title": "Pedidos"
+}
+```
+
+And then in your app use the `defineMessages` and `formatMessage` functions from `react-intl` like so:
+
+```jsx
+import React, { useState } from 'react'
+import { defineMessages, useIntl } from 'react-intl'
+
+const messages = defineMessages({
+  title: { id: 'admin/orders-main-title' },
+})
+
+function Something() {
+  const { formatMessage } = useIntl()
+
+  return (
+    <MyComponent title={formatMessage(messages.title)} />} />
+  )
+}
+
+```
+
 #### The `react` folder
+
+You'll most actively develop your app under this folder. That's where your components will live. In order to make one component exportable and understandable for the `react` builder it needs to be default exported. This way, the component is also made available to the `routes.json` from the `admin` builder, which will bind everything.
