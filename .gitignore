@@ -1,7 +1,7 @@
-### SublimeText ###
+# SublimeText
 *.sublime-workspace
 
-### OSX ###
+# OSX
 .DS_Store
 .AppleDouble
 .LSOverride
@@ -14,7 +14,6 @@ Icon
 .Spotlight-V100
 .Trashes
 
-### Windows ###
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
@@ -36,9 +35,10 @@ docs/_book/
 npm-debug.log
 .build/
 lib
-.eslintrc
 *.orig
 package-lock.json
 yarn-error.log
 node/package-lock.json
 react/package-lock.json
+cypress/screenshots
+cypress/fixtures

@@ -10,7 +10,7 @@
     "@types/react-headroom": "^2.2.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-intl": "^5.8.1",
+    "react-intl": "^3.9.1",
     "typescript": "3.9.7",
     "vtex.admin-example": "https://marcelo--teamadmin.myvtex.com/_v/private/typings/linked/v1/vtex.admin-example@0.0.2+build1622216459/public/@types/vtex.admin-example",
     "vtex.render-runtime": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.128.4/public/@types/vtex.render-runtime",

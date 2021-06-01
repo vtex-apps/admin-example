@@ -3,13 +3,10 @@
   "vendor": "vtex",
   "version": "0.0.2",
   "title": "Example Admin App",
-  "description": "",
+  "description": "An example Admin App to get your Admin App started",
   "mustUpdateAt": "2022-08-28",
   "scripts": {
     "postreleasy": "vtex publish"
-  },
-  "dependencies": {
-    "vtex.styleguide": "9.x"
   },
   "builders": {
     "react": "3.x",

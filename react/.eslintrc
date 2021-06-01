@@ -1,0 +1,6 @@
+{
+  "extends": "vtex-react",
+  "rules": {
+    "@typescript-eslint/naming-convention": ["off"]
+  }
+}

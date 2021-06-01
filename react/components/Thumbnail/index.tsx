@@ -14,7 +14,7 @@ export function Thumbnail(props: ThumbnailProps) {
         borderRadius: 4,
       }}
     >
-      <img className={cn({ objectFit: 'contain' })} src={src} />
+      <img className={cn({ objectFit: 'contain' })} alt="" src={src} />
     </Flex>
   )
 }
