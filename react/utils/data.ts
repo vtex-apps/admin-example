@@ -1,3 +1,4 @@
+// This file is a mock.
 import short from 'short-uuid'
 
 import { slugify } from './slugify'

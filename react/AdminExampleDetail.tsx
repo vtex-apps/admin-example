@@ -10,6 +10,15 @@ import { items } from './utils/data'
 
 function AdminExampleDetail() {
   const { formatMessage } = useIntl()
+  /**
+   * It's worth taking a look at the `render-runtime`,
+   * which contains the layer which the Admin runs on top
+   * of. It provides many useful tools for the Admin, such
+   * as navigation - the `navigate` method below -, the current
+   * route - the `route` object below -, among others.
+   *
+   * vtex.render-runtime: https://github.com/vtex-apps/render-runtime
+   */
   const { navigate, route } = useRuntime()
   const item = items[Number(route.path.replace('/admin/app/example/', ''))]
 
@@ -35,4 +44,9 @@ function AdminExampleDetail() {
   )
 }
 
+/**
+ * Note how this component is default exported.
+ * This is a MUST for it to be available for the
+ * builders.
+ */
 export default AdminExampleDetail

@@ -34,4 +34,9 @@ function AdminExample() {
   )
 }
 
+/**
+ * Note how this component is default exported.
+ * This is a MUST for it to be available for the
+ * builders.
+ */
 export default AdminExample
