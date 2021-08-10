@@ -280,7 +280,7 @@ export default class UsersTable extends Component {
             totalItems: 100,
             main: {
               label: 'Send email',
-              handleCallback: (params: any) => alert('TODO: SHOW EMAIL FORM'),
+              handleCallback: (_params: any) => alert('TODO: SHOW EMAIL FORM'),
             },
             others: [
               {
