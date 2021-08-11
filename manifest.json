@@ -1,7 +1,7 @@
 {
   "name": "admin-example",
   "vendor": "vtex",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "title": "Example Admin App",
   "description": "",
   "mustUpdateAt": "2022-08-28",
