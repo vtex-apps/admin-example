@@ -16,5 +16,6 @@
     "admin": "0.x",
     "messages": "1.x",
     "docs": "0.x"
-  }
+  },
+  "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
 }
