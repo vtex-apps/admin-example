@@ -10,7 +10,6 @@ import faker from 'faker'
 
 const EXAMPLE_LENGTH = 100
 const MOCKED_DATA = [...Array(EXAMPLE_LENGTH)].map(() => ({
-  avatar: faker.internet.avatar(),
   name: faker.name.findName(),
   streetAddress: faker.address.streetAddress(),
   cityStateZipAddress: `${faker.address.city()}, ${faker.address.stateAbbr()} ${faker.address.zipCode()}`,
@@ -30,56 +29,29 @@ export default class UsersTable extends Component {
 
   private getSchema() {
     const { tableDensity }: any = this.state
-    let avatarScale = 'scale(1,1)'
+
     let fontSize = 'f5'
-    let avatarColumnWidth = 100
+
     switch (tableDensity) {
       case 'low': {
-        avatarScale = 'scale(0.9, 0.75)'
         fontSize = 'f5'
-        avatarColumnWidth = 100
         break
       }
       case 'medium': {
-        avatarScale = 'scale(0.82, 0.53)'
         fontSize = 'f6'
-        avatarColumnWidth = 90
         break
       }
       case 'high': {
-        avatarScale = 'scale(0.75, 0.32)'
         fontSize = 'f7'
-        avatarColumnWidth = 75
         break
       }
       default: {
-        avatarScale = 'scale(1,1)'
         fontSize = 'f5'
-        avatarColumnWidth = 100
         break
       }
     }
     return {
       properties: {
-        avatar: {
-          title: 'Avatar',
-          width: avatarColumnWidth,
-          cellRenderer: ({ cellData }: any) => {
-            return (
-              <div
-                className="pa4 tc"
-                style={{
-                  transform: avatarScale,
-                }}
-              >
-                <img src={cellData} className="br-100 h3 w3 dib" alt="avatar" />
-              </div>
-            )
-          },
-          headerRenderer: ({ title }: any) => (
-            <span className="w-100 tc">{title}</span>
-          ),
-        },
         name: {
           title: 'Name',
         },
@@ -283,10 +255,6 @@ export default class UsersTable extends Component {
               handleCallback: (_params: any) => alert('TODO: SHOW EMAIL FORM'),
             },
             others: [
-              {
-                label: 'Reset avatar',
-                handleCallback: (params: any) => console.warn(params),
-              },
               {
                 label: 'Delete',
                 handleCallback: (params: any) => console.warn(params),

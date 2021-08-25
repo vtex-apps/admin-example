@@ -5,6 +5,6 @@
   },
   "admin.app.example-detail": {
     "component": "AdminExampleDetail",
-    "path": "/admin/app/example/:id"
+    "path": "/admin/app/example-details"
   }
 }
