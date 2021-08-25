@@ -8,11 +8,6 @@
       "labelId": "admin-example.navigation.label-table",
       "path": "/admin/example",
       "searchKeyWordsHelpers": "admin-example.navigation.table.search.kws"
-    },
-    {
-      "labelId": "admin-example.navigation.label-details",
-      "path": "/admin/example-details",
-      "searchKeyWordsHelpers": "admin-example.navigation.details.search.kws"
     }
   ]
 }

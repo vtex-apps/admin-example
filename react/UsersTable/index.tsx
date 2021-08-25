@@ -7,6 +7,7 @@ import {
   Input,
 } from 'vtex.styleguide'
 import faker from 'faker'
+import { withRuntimeContext } from 'vtex.render-runtime'
 
 const EXAMPLE_LENGTH = 100
 const MOCKED_DATA = [...Array(EXAMPLE_LENGTH)].map(() => ({
@@ -16,7 +17,11 @@ const MOCKED_DATA = [...Array(EXAMPLE_LENGTH)].map(() => ({
   email: faker.internet.email().toLowerCase(),
 }))
 
-export default class UsersTable extends Component {
+interface Props {
+  runtime: any
+}
+
+class UsersTable extends Component<Props> {
   constructor(props: any) {
     super(props)
     this.state = {
@@ -133,6 +138,10 @@ export default class UsersTable extends Component {
       filterStatements,
       tableDensity,
     }: any = this.state
+    const {
+      runtime: { navigate },
+    } = this.props
+
     return (
       <div>
         <Table
@@ -141,6 +150,12 @@ export default class UsersTable extends Component {
           items={items}
           schema={this.getSchema()}
           density="low"
+          onRowClick={({ rowData }: any) =>
+            navigate({
+              page: 'admin.app.example-detail',
+              params: { id: rowData.id },
+            })
+          }
           toolbar={{
             density: {
               buttonLabel: 'Line density',
@@ -266,3 +281,5 @@ export default class UsersTable extends Component {
     )
   }
 }
+
+export default withRuntimeContext(UsersTable)
