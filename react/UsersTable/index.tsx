@@ -7,17 +7,21 @@ import {
   Input,
 } from 'vtex.styleguide'
 import faker from 'faker'
+import { withRuntimeContext } from 'vtex.render-runtime'
 
 const EXAMPLE_LENGTH = 100
 const MOCKED_DATA = [...Array(EXAMPLE_LENGTH)].map(() => ({
-  avatar: faker.internet.avatar(),
   name: faker.name.findName(),
   streetAddress: faker.address.streetAddress(),
   cityStateZipAddress: `${faker.address.city()}, ${faker.address.stateAbbr()} ${faker.address.zipCode()}`,
   email: faker.internet.email().toLowerCase(),
 }))
 
-export default class UsersTable extends Component {
+interface Props {
+  runtime: any
+}
+
+class UsersTable extends Component<Props> {
   constructor(props: any) {
     super(props)
     this.state = {
@@ -30,56 +34,29 @@ export default class UsersTable extends Component {
 
   private getSchema() {
     const { tableDensity }: any = this.state
-    let avatarScale = 'scale(1,1)'
+
     let fontSize = 'f5'
-    let avatarColumnWidth = 100
+
     switch (tableDensity) {
       case 'low': {
-        avatarScale = 'scale(0.9, 0.75)'
         fontSize = 'f5'
-        avatarColumnWidth = 100
         break
       }
       case 'medium': {
-        avatarScale = 'scale(0.82, 0.53)'
         fontSize = 'f6'
-        avatarColumnWidth = 90
         break
       }
       case 'high': {
-        avatarScale = 'scale(0.75, 0.32)'
         fontSize = 'f7'
-        avatarColumnWidth = 75
         break
       }
       default: {
-        avatarScale = 'scale(1,1)'
         fontSize = 'f5'
-        avatarColumnWidth = 100
         break
       }
     }
     return {
       properties: {
-        avatar: {
-          title: 'Avatar',
-          width: avatarColumnWidth,
-          cellRenderer: ({ cellData }: any) => {
-            return (
-              <div
-                className="pa4 tc"
-                style={{
-                  transform: avatarScale,
-                }}
-              >
-                <img src={cellData} className="br-100 h3 w3 dib" alt="avatar" />
-              </div>
-            )
-          },
-          headerRenderer: ({ title }: any) => (
-            <span className="w-100 tc">{title}</span>
-          ),
-        },
         name: {
           title: 'Name',
         },
@@ -161,6 +138,10 @@ export default class UsersTable extends Component {
       filterStatements,
       tableDensity,
     }: any = this.state
+    const {
+      runtime: { navigate },
+    } = this.props
+
     return (
       <div>
         <Table
@@ -169,6 +150,12 @@ export default class UsersTable extends Component {
           items={items}
           schema={this.getSchema()}
           density="low"
+          onRowClick={({ rowData }: any) =>
+            navigate({
+              page: 'admin.app.example-detail',
+              params: { id: rowData.id },
+            })
+          }
           toolbar={{
             density: {
               buttonLabel: 'Line density',
@@ -284,10 +271,6 @@ export default class UsersTable extends Component {
             },
             others: [
               {
-                label: 'Reset avatar',
-                handleCallback: (params: any) => console.warn(params),
-              },
-              {
                 label: 'Delete',
                 handleCallback: (params: any) => console.warn(params),
               },
@@ -298,3 +281,5 @@ export default class UsersTable extends Component {
     )
   }
 }
+
+export default withRuntimeContext(UsersTable)
