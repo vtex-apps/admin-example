@@ -1,4 +1,6 @@
-# Admin Example
+# [Deprecated] Admin Example
+
+_We're working on our new design system. Please get in touch if you are interested._
 
 An example admin app that adds a menu button to the admin sidebar and a navigation via parameter example.
 
