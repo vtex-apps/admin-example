@@ -1,4 +1,4 @@
-# [Being deprecated] Admin Example
+# [Deprecating] Admin Example
 
 _We're working on our new design system. Please get in touch if you are part of VTEX product team and working on an admin app. If you are external to VTEX you can still use this repo._
 
