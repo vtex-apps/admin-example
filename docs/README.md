@@ -1,6 +1,6 @@
-# [Deprecated] Admin Example
+# [Being deprecated] Admin Example
 
-_We're working on our new design system. Please get in touch if you are interested._
+_We're working on our new design system. Please get in touch if you are part of VTEX product team and working on an admin app. If you are external to VTEX you can still use this repo._
 
 An example admin app that adds a menu button to the admin sidebar and a navigation via parameter example.
 
